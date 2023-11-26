@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Gaitu'Tar Store</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Incorporação de Links</title>
 </head>
-
 <body>
-  <h1>gaitu'tar store</h1>
-  <script src="script.js"></script>
 
-  
+    <div id="links-container"></div>
+
+    <script>
+        // Função para carregar e incorporar os links diretamente
+        function carregarLinks() {
+            const linksContainer = document.getElementById('links-container');
+
+            // Carrega o arquivo JSON
+            fetch('link.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Verifica se há uma chave chamada 'links' no JSON
+                    if (data.links && Array.isArray(data.links)) {
+                        data.links.forEach(link => {
+                            const scriptElement = document.createElement('script');
+                            scriptElement.setAttribute('class', 'ymp-script');
+                            scriptElement.setAttribute('src', link);
+                            linksContainer.appendChild(scriptElement);
+                        });
+                    } else {
+                        console.error('Formato inválido do arquivo JSON.');
+                    }
+                })
+                .catch(error => console.error('Erro ao carregar links:', error));
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = carregarLinks;
+    </script>
+
 </body>
-
 </html>

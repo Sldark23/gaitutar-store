@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-<title> filho da dona deise </title>
-  </head>
-<style>
-  /* Estilo para o botão */
-  #botaoLoja {
-    position: fixed;
-    bottom: 10px; /* Ajuste a distância do botão em relação ao fundo da página conforme necessário */
-    right: 10px; /* Ajuste a distância do botão em relação à direita da página conforme necessário */
-    padding: 10px; /* Ajuste o preenchimento do botão conforme necessário */
-    background-color: #4CAF50; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer;
-  }
-</style>
-  <body>
-<h1> filho da dona deise </h1>
-  <script class="ymp-script" src="https://api.yampi.io/v2/gaitu-store/public/buy-button/IWH372NRSD/js"></script>
-  <script class="ymp-script" src="https://api.yampi.io/v2/gaitu-store/public/buy-button/RVUCQ6PB51/js"></script>
-  <script class="ymp-script" src="https://api.yampi.io/v2/gaitu-store/public/buy-button/D2C0DZV6YN/js"></script>
-    <script class="ymp-script" src="https://api.yampi.io/v2/gaitu-store/public/buy-button/I6DYXI829X/js"></script>
-<script class="ymp-script" src="https://api.yampi.io/v2/gaitu-store/public/buy-button/H4X9870DTL/js"></script>
-    
-    <a href="https://gaitu-store.catalog.yampi.io/?utm_source=web_app_manifest" target="_blank" id="botaoLoja">gaitu'tar store</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="style.css">
+  <title>filho da dona deise</title>
+</head>
+<body>
+<h1>filho da dona deise</h1>
+    <div id="links-container"></div>
+
+    <script>
+        // Função para carregar e incorporar os links diretamente
+        function carregarLinks() {
+            const linksContainer = document.getElementById('links-container');
+
+            // Carrega o arquivo JSON
+            fetch('link.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Verifica se há uma chave chamada 'links' no JSON
+                    if (data.links && Array.isArray(data.links)) {
+                        data.links.forEach(link => {
+                            const scriptElement = document.createElement('script');
+                            scriptElement.setAttribute('class', 'ymp-script');
+                            scriptElement.setAttribute('src', link);
+                            linksContainer.appendChild(scriptElement);
+                        });
+                    } else {
+                        console.error('Formato inválido do arquivo JSON.');
+                    }
+                })
+                .catch(error => console.error('Erro ao carregar links:', error));
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = carregarLinks;
+    </script>
+
 </body>
 </html>

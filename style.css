@@ -1,4 +1,21 @@
-html {
-  height: 100%;
-  width: 100%;
+/* Estilo geral para todos os sites */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
+
+/* Estilo específico para o site1 */
+.ymp-script.site1 {
+    border: 2px solid #3498db;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Estilo específico para o site2 */
+.ymp-script.site2 {
+    border: 2px solid #e74c3c;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Adicione mais estilos conforme necessário para outros sites */
