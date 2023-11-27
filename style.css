@@ -18,4 +18,16 @@ body {
     padding: 5px;
 }
 
+#botaoLoja {
+    position: fixed;
+    bottom: 10px; /* Ajuste a distância do botão em relação ao fundo da página conforme necessário */
+    right: 10px; /* Ajuste a distância do botão em relação à direita da página conforme necessário */
+    padding: 10px; /* Ajuste o preenchimento do botão conforme necessário */
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer;
+}
+
 /* Adicione mais estilos conforme necessário para outros sites */
